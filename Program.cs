@@ -19,17 +19,16 @@ namespace ConsoleApp2
             int aCount = Convert.ToInt32(entrada1);
 
             int[] grupos = Array.ConvertAll(entrada2.Split(' '), aTemp => Convert.ToInt32(aTemp));
-            int[] result = solve(grupos).ToArray();
+            int[] result = GerarBarramentos(grupos).ToArray();
 
             Console.WriteLine(string.Concat("Tamanho Possiveis dos Barramentos: ", string.Join(" ", result)));
 
             Console.ReadLine();
         }
 
+             
 
-      
-
-        static List<int> solve(int[] grupos)
+        static List<int> GerarBarramentos(int[] grupos)
         {
 
             List<int> result = new List<int>();
@@ -48,8 +47,8 @@ namespace ConsoleApp2
                 tentativasGrupos.Add(totalGrupos);
             }
 
-            Console.WriteLine("minimo: " + capacidadeMinima);
-            Console.WriteLine("total: " + totalGrupos);
+            //Console.WriteLine("minimo: " + capacidadeMinima);
+            //Console.WriteLine("total: " + totalGrupos);
 
 
             foreach (var grupo in tentativasGrupos)
